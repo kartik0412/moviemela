@@ -52,6 +52,7 @@ export default class Display extends React.Component {
                 cast.push(
                     <Cast
                         key={i}
+                        id={movie.credits.cast[i].id}
                         character={movie.credits.cast[i].character}
                         name={movie.credits.cast[i].name}
                         profilepic={movie.credits.cast[i].profile_path}
@@ -83,7 +84,11 @@ export default class Display extends React.Component {
                             <div className="big-image">
                                 <img
                                     alt={`${this.props.title}`}
-                                    src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${movie.poster_path}`}
+                                    src={
+                                        movie.poster_path
+                                            ? `https://image.tmdb.org/t/p/w300_and_h450_bestv2${movie.poster_path}`
+                                            : ""
+                                    }
                                 ></img>
                             </div>
                             <div className="big-info">

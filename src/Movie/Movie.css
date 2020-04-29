@@ -1,4 +1,4 @@
-.cast-main {
+.movie-main {
     height: 88%;
     min-width: 180px;
     display: inline-block;
@@ -8,28 +8,30 @@
     box-shadow: 5px 5px 10px #dbdada;
 }
 
-.cast-pic img {
+.movie-pic img {
     width: 100%;
     height: 100%;
     border-radius: 15px;
 }
-.cast-pic {
+.movie-pic {
     height: 82%;
     width: 198px;
     margin-left: auto;
     margin-right: auto;
-}
-.character {
-    margin: 0;
-    padding: 4px;
 }
 .name {
     margin: 0;
     padding: 4px;
 }
 
+.name a {
+    /* color: black; */
+    cursor: pointer;
+    text-decoration: none;
+}
+
 @media only screen and (max-width: 480px) {
-    .cast-main {
-        height: 90%;
+    .movie-main {
+        height: 100%;
     }
 }

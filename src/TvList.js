@@ -20,14 +20,11 @@ export default class TvList extends React.Component {
 
     async getpage() {
         try {
-            fetch(url + this.state.page)
-                .then((res) => res.json())
-                .then((tvlist) =>
-                    this.setState({
-                        isloading: false,
-                        tvlist: tvlist,
-                    })
-                );
+            let tvlist = await axios.get(url + this.state.page);
+            this.setState({
+                isloading: false,
+                tvlist: tvlist.data,
+            });
         } catch (err) {}
     }
 
@@ -56,14 +53,7 @@ export default class TvList extends React.Component {
 
     async componentDidMount() {
         try {
-            fetch(url + this.state.page)
-                .then((res) => res.json())
-                .then((tvlist) => {
-                    this.setState({
-                        isloading: false,
-                        tvlist: tvlist,
-                    });
-                });
+            this.getpage();
         } catch (err) {}
     }
     render() {

@@ -48,7 +48,7 @@
     color: black;
     padding-left: 10px;
     font-size: 0.85rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.6);
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
 }
 .card-button a {
     text-decoration: none;

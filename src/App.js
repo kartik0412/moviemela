@@ -34,14 +34,11 @@ export default class App extends React.Component {
     async handleSubmit(name) {
         try {
             if (name === "") return;
-            fetch(url1 + this.state.type + url2 + name)
-                .then((res) => res.json())
-                .then((movielist) => {
-                    this.setState({
-                        isloading: false,
-                        movielist: movielist,
-                    });
-                });
+            let movielist = await axios.get(url1 + this.state.type + url2 + name);
+            this.setState({
+                isloading: false,
+                movielist: movielist.data,
+            });
         } catch (err) {}
     }
 

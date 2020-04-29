@@ -21,14 +21,11 @@ export default class MovieList extends React.Component {
 
     async getpage() {
         try {
-            fetch(url + this.state.page)
-                .then((res) => res.json())
-                .then((movielist) => {
-                    this.setState({
-                        isloading: false,
-                        movielist: movielist,
-                    });
-                });
+            let movielist = await axios.get(url + this.state.page);
+            this.setState({
+                isloading: false,
+                movielist: movielist.data,
+            });
         } catch (err) {}
     }
 
@@ -57,14 +54,7 @@ export default class MovieList extends React.Component {
 
     async componentDidMount() {
         try {
-            fetch(url + this.state.page)
-                .then((res) => res.json())
-                .then((movielist) => {
-                    this.setState({
-                        isloading: false,
-                        movielist: movielist,
-                    });
-                });
+            this.getpage();
         } catch (err) {}
     }
 

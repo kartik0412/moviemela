@@ -1,12 +1,13 @@
 import React from "react";
 import "./Card.css";
+const url = "https://image.tmdb.org/t/p/w185_and_h278_bestv2";
 export default class Card extends React.Component {
     render() {
         return (
             <div className="card">
                 <img
                     className="card-image"
-                    src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${this.props.imageurl}`}
+                    src={this.props.imageurl ? url + this.props.imageurl : ""}
                     alt={this.props.title}
                 ></img>
                 <div className="card-info">
