@@ -1,0 +1,86 @@
+.card {
+    width: 35%;
+    height: 20%px;
+    margin: 7%;
+    flex-direction: row;
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 5px 5px 10px #dbdada;
+}
+.card-image {
+    height: 100%;
+    width: 40%;
+}
+.card-info {
+    height: 20%;
+    width: 60%;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+    position: relative;
+}
+.card-sum {
+    height: 233px;
+    font-size: 0.9rem;
+    /* background-color: red; */
+    overflow: hidden;
+}
+.card-sum h4 {
+    font-size: 1.5rem;
+    padding: 10px;
+    color: black;
+    text-align: left;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
+}
+.card-sum .overview {
+    padding: 10px;
+    text-align: left;
+    font-size: 0.9em;
+    color: rgba(0, 0, 0, 0.6);
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+}
+.card-button {
+    height: 45px;
+    line-height: 40px;
+    text-align: left;
+    color: black;
+    padding-left: 10px;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.6);
+}
+.card-button a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+.card-button a:hover {
+    color: rgba(0, 0, 0, 1);
+}
+
+.date {
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+    .card {
+        width: 100%;
+    }
+    .card-sum h4 {
+        font-size: 1.19rem;
+    }
+    .card-sum .overview {
+        font-size: 0.85rem;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .card-sum h4 {
+        font-size: 1.19rem;
+    }
+    .card-sum .overview {
+        font-size: 0.85rem;
+    }
+}

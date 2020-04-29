@@ -1,0 +1,21 @@
+import React from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
+import TvList from "../TvList";
+import MovieList from "../MovieList";
+import Display from "../Display/Display";
+import "./CardList.css";
+
+export default class CardList extends React.Component {
+    render() {
+        return (
+            <div>
+                <Switch>
+                    <Route exact path="/" render={() => <Redirect to="/movies" />} />
+                    <Route exact path="/movies" render={() => <MovieList />} />
+                    <Route exact path="/tv" render={() => <TvList />} />
+                    <Route exact path="/display/:type/:id" render={(routerProps) => <Display {...routerProps} />} />
+                </Switch>
+            </div>
+        );
+    }
+}
