@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Cast from "../Cast/Cast";
-import Videos from "../Videos";
+import Videos from "../Videos/Videos";
 import "./Display.css";
 
 export default class Display extends React.Component {
@@ -30,7 +30,6 @@ export default class Display extends React.Component {
     }
 
     handleClick(e) {
-        console.log(e.target.id);
         if (this.state.display === "cast" && e.target.id === "videos") {
             document.getElementById("videos").className = "link active-link";
             document.getElementById("cast").className = "link";

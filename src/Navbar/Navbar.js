@@ -1,9 +1,11 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
 import "./Navbar.css";
 class Navbar extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            name: "",
+        };
         this.handleChange = this.handleChange.bind(this);
         this.handleChangeSelect = this.handleChangeSelect.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -12,11 +14,14 @@ class Navbar extends React.Component {
         this.props.handleChangeSelect(e.target.value);
     }
     handleChange(e) {
-        this.props.handleChange(e.target.value);
+        this.setState({
+            name: e.target.value,
+        });
     }
     handleSubmit(e) {
         e.preventDefault();
-        this.props.handleSubmit();
+        document.getElementById("input").value = "";
+        this.props.handleSubmit(this.state.name);
     }
 
     render() {
@@ -46,7 +51,13 @@ class Navbar extends React.Component {
                             </option>
                             <option value="tv">TV-Series</option>
                         </select>
-                        <input onChange={this.handleChange} className="form-control" type="text" placeholder="Search" />
+                        <input
+                            onChange={this.handleChange}
+                            id="input"
+                            className="form-control"
+                            type="text"
+                            placeholder="Search"
+                        />
                     </form>
                 </div>
             </nav>
@@ -54,4 +65,4 @@ class Navbar extends React.Component {
     }
 }
 
-export default withRouter(Navbar);
+export default Navbar;

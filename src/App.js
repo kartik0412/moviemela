@@ -17,7 +17,6 @@ export default class App extends React.Component {
             type: "movie",
             movielist: null,
         };
-        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChangeSelect = this.handleChangeSelect.bind(this);
     }
@@ -32,27 +31,8 @@ export default class App extends React.Component {
         );
     }
 
-    async handleChange(val) {
-        this.setState({
-            isloading: false,
-            name: val,
-        });
-        // try {
-        //     const name = this.state.name;
-        //     if (name === "") return;
-        //     fetch(url1 + this.state.type + url2 + name)
-        //         .then((res) => res.json())
-        //         .then((movielist) =>
-        //             this.setState({
-        //                 isloading: false,
-        //                 movielist: movielist.data,
-        //             })
-        //         );
-        // } catch (err) {}
-    }
-    async handleSubmit() {
+    async handleSubmit(name) {
         try {
-            const name = this.state.name;
             if (name === "") return;
             fetch(url1 + this.state.type + url2 + name)
                 .then((res) => res.json())
@@ -68,11 +48,7 @@ export default class App extends React.Component {
     render() {
         return (
             <div className="App">
-                <Navbar
-                    handleSubmit={this.handleSubmit}
-                    handleChangeSelect={this.handleChangeSelect}
-                    handleChange={this.handleChange}
-                />
+                <Navbar handleSubmit={this.handleSubmit} handleChangeSelect={this.handleChangeSelect} />
 
                 {this.state.movielist ? (
                     <Search type={this.state.type} isloading={this.state.isloading} movielist={this.state.movielist} />
