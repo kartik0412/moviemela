@@ -1,11 +1,11 @@
 .card {
-    width: 35%;
-    height: 20%px;
-    margin: 7%;
-    flex-direction: row;
     display: flex;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    width: 35%;
+    height: 278px;
+    margin-right: auto;
+    margin-left: auto;
+    flex-direction: row;
+    margin-bottom: 2rem;
     box-shadow: 5px 5px 10px #dbdada;
 }
 .card-image {
@@ -66,14 +66,18 @@
 }
 
 @media only screen and (max-width: 600px) {
+    body {
+        min-width: 375px;
+    }
+
     .card {
-        width: 100%;
+        width: 90%;
     }
     .card-sum h4 {
         font-size: 1.19rem;
     }
     .card-sum .overview {
-        font-size: 0.85rem;
+        font-size: 0.7rem;
     }
 }
 @media only screen and (max-width: 800px) {
@@ -81,6 +85,6 @@
         font-size: 1.19rem;
     }
     .card-sum .overview {
-        font-size: 0.85rem;
+        font-size: 0.7rem;
     }
 }

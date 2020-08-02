@@ -1,0 +1,107 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    background-color: black;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+}
+
+.options {
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    right: 0;
+    height: 65px;
+    z-index: 1000;
+    background-color: black;
+    transform: translateX(100%);
+    transition: all 0.3s ease-in;
+    opacity: 0;
+}
+
+.nav-links {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.nav-links li {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.slide-options {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.nav-links li select {
+    width: 112px;
+    height: 30px;
+    font-size: 14px;
+    line-height: initial;
+    margin-right: 10px;
+}
+
+.nav-links li input {
+    height: 30px;
+    font-size: 14px;
+}
+
+.burger {
+    cursor: pointer;
+    display: none;
+}
+
+.line1,
+.line2,
+.line3 {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.2s ease-in;
+}
+
+.toggle .line1 {
+    transform: rotate(45deg) translate(7px, 5px);
+}
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(-45deg) translate(6px, -5px);
+}
+
+@media only screen and (max-width: 540px) {
+    .burger {
+        display: block;
+    }
+
+    .nav-links li input {
+        width: 190px;
+    }
+}
+
+@media only screen and (min-width: 541px) {
+    .options {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    .burger {
+        display: none;
+    }
+}
