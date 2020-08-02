@@ -33,13 +33,13 @@ export default class App extends React.Component {
 
     async handleSubmit(name) {
         try {
-            if (name === "") return;
-            let movielist = await axios.get(url1 + this.state.type + url2 + name);
+            if (name != "")
+                var movielist = await axios.get(url1 + this.state.type + url2 + name);
             this.setState({
                 isloading: false,
-                movielist: movielist.data,
+                movielist: name.length ? movielist.data : null,
             });
-        } catch (err) {}
+        } catch (err) { }
     }
 
     render() {
@@ -50,8 +50,8 @@ export default class App extends React.Component {
                 {this.state.movielist ? (
                     <Search type={this.state.type} isloading={this.state.isloading} movielist={this.state.movielist} />
                 ) : (
-                    <CardList />
-                )}
+                        <CardList />
+                    )}
             </div>
         );
     }

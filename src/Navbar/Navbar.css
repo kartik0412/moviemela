@@ -20,8 +20,7 @@
 }
 
 .nav-links {
-    display: inline-flex;
-    flex-direction: column;
+    display: flex;
 }
 
 .nav-links li {
@@ -36,6 +35,7 @@
 
 .nav-links li select {
     width: 112px;
+    display: flex;
     height: 30px;
     font-size: 14px;
     line-height: initial;

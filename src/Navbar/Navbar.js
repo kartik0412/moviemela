@@ -16,11 +16,12 @@ class Navbar extends React.Component {
     handleChange(e) {
         this.setState({
             name: e.target.value,
+        }, () => {
+            this.handleSubmit(e);
         });
     }
     handleSubmit(e) {
         e.preventDefault();
-        document.getElementById("input").value = "";
         this.props.handleSubmit(this.state.name);
     }
 
