@@ -19,19 +19,6 @@
     color: white;
 }
 
-.options {
-    position: absolute;
-    top: 10vh;
-    left: 0;
-    right: 0;
-    height: 65px;
-    z-index: 1000;
-    background-color: black;
-    transform: translateX(100%);
-    transition: all 0.3s ease-in;
-    opacity: 0;
-}
-
 .nav-links {
     display: inline-flex;
     flex-direction: column;
@@ -43,8 +30,8 @@
 }
 
 .slide-options {
-    transform: translateX(0);
-    opacity: 1;
+    transform: translateX(0) !important;
+    opacity: 1 !important;
 }
 
 .nav-links li select {
@@ -91,16 +78,25 @@
         display: block;
     }
 
+    .options {
+        position: absolute;
+        top: 9vh;
+        left: 0;
+        right: 0;
+        height: 65px;
+        z-index: 1000;
+        background-color: black;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+        opacity: 0;
+    }
+
     .nav-links li input {
         width: 190px;
     }
 }
 
 @media only screen and (min-width: 541px) {
-    .options {
-        transform: translateX(100%);
-        opacity: 0;
-    }
     .burger {
         display: none;
     }

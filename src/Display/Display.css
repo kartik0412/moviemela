@@ -127,8 +127,9 @@
         height: 100%;
     }
     .big-image img {
+        width: 60%;
+        min-width: 308px;
         height: 100%;
-        width: 100%;
     }
     .genre {
         color: white;
