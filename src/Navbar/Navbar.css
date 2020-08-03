@@ -7,6 +7,7 @@
     color: white;
     padding-left: 15px;
     padding-right: 15px;
+    overflow-x: hidden;
 }
 
 .logo {
@@ -26,11 +27,6 @@
 .nav-links li {
     list-style: none;
     margin-top: 15px;
-}
-
-.slide-options {
-    transform: translateX(0) !important;
-    opacity: 1 !important;
 }
 
 .nav-links li select {
@@ -89,6 +85,10 @@
         transform: translateX(100%);
         transition: transform 0.3s ease-in;
         opacity: 0;
+    }
+    .slide-options {
+        transform: translateX(0) !important;
+        opacity: 1 !important;
     }
 
     .nav-links li input {
