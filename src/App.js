@@ -33,7 +33,7 @@ export default class App extends React.Component {
 
     async handleSubmit(name) {
         try {
-            if (name != "")
+            if (name !== "")
                 var movielist = await axios.get(url1 + this.state.type + url2 + name);
             this.setState({
                 isloading: false,
