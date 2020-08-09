@@ -33,7 +33,6 @@
 .people-main {
     width: 100%;
     height: 70%;
-    /* position: absolute; */
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
@@ -98,7 +97,7 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    height: 100vh;
+    /* height: 100vh; */
 }
 .people-movie {
     width: 100%;
@@ -107,12 +106,12 @@
 
 div .display-movie {
     width: 100%;
-    overflow: scroll;
-    white-space: nowrap;
+    overflow-x: scroll;
     scroll-behavior: smooth;
+    display: flex;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 550px) {
     .people-main {
         height: 100%;
         overflow-y: scroll;

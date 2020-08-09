@@ -32,7 +32,7 @@ export default class People extends React.Component {
                 data: data.data,
                 work: work.data,
             });
-        } catch (err) {}
+        } catch (err) { }
     }
 
     render() {
@@ -56,82 +56,85 @@ export default class People extends React.Component {
                 {isloading ? (
                     <div className="loader"></div>
                 ) : (
-                    <>
-                        <div className="people-outer">
-                            <div className="people-main">
-                                <div className="people-img">
-                                    <img
-                                        alt={data.name}
-                                        src={data && data.profile_path ? url3 + data.profile_path : ""}
-                                    ></img>
-                                </div>
-                                <div className="people-info">
-                                    <div className="people-name">
-                                        {data.name}
-                                        <div className="people-social">
-                                            {data.external_ids && data.external_ids.facebook_id ? (
-                                                <a
-                                                    style={{ color: "#0084FF" }}
-                                                    target="blank"
-                                                    href={`https://www.facebook.com/${data.external_ids.facebook_id}`}
-                                                >
-                                                    <FontAwesomeIcon icon={faFacebook} />
-                                                </a>
-                                            ) : (
-                                                ""
-                                            )}
-                                            {data.external_ids && data.external_ids.instagram_id ? (
-                                                <a
-                                                    style={{ color: " #E1306C" }}
-                                                    target="blank"
-                                                    href={`https://www.instagram.com/${data.external_ids.instagram_id}`}
-                                                >
-                                                    <FontAwesomeIcon icon={faInstagram} />
-                                                </a>
-                                            ) : (
-                                                ""
-                                            )}
-                                            {data.external_ids && data.external_ids.twitter_id ? (
-                                                <a
-                                                    style={{ color: " #00acee" }}
-                                                    target="blank"
-                                                    href={`https://www.twitter.com/${data.external_ids.twitter_id}`}
-                                                >
-                                                    <FontAwesomeIcon icon={faTwitter} />
-                                                </a>
-                                            ) : (
-                                                ""
-                                            )}
-                                        </div>
+                        <>
+                            <div className="people-outer">
+
+
+                                <div className="people-main">
+                                    <div className="people-img">
+                                        <img
+                                            alt={data.name}
+                                            src={data && data.profile_path ? url3 + data.profile_path : ""}
+                                        ></img>
                                     </div>
-                                    <p className="people-head">
-                                        <span>DOB : </span>
-                                        {data.birthday}
-                                    </p>
-                                    <p className="people-head">
-                                        <span>From : </span>
-                                        {data.place_of_birth}
-                                    </p>
-                                    <p className="people-head">
-                                        <span>Work : </span>
-                                        {data.known_for_department}
-                                    </p>
-                                    <p className="people-head">
-                                        <span>biography : </span>
-                                        {data.biography}
-                                    </p>
+                                    <div className="people-info">
+                                        <div className="people-name">
+                                            {data.name}
+                                            <div className="people-social">
+                                                {data.external_ids && data.external_ids.facebook_id ? (
+                                                    <a
+                                                        style={{ color: "#0084FF" }}
+                                                        target="blank"
+                                                        href={`https://www.facebook.com/${data.external_ids.facebook_id}`}
+                                                    >
+                                                        <FontAwesomeIcon icon={faFacebook} />
+                                                    </a>
+                                                ) : (
+                                                        ""
+                                                    )}
+                                                {data.external_ids && data.external_ids.instagram_id ? (
+                                                    <a
+                                                        style={{ color: " #E1306C" }}
+                                                        target="blank"
+                                                        href={`https://www.instagram.com/${data.external_ids.instagram_id}`}
+                                                    >
+                                                        <FontAwesomeIcon icon={faInstagram} />
+                                                    </a>
+                                                ) : (
+                                                        ""
+                                                    )}
+                                                {data.external_ids && data.external_ids.twitter_id ? (
+                                                    <a
+                                                        style={{ color: " #00acee" }}
+                                                        target="blank"
+                                                        href={`https://www.twitter.com/${data.external_ids.twitter_id}`}
+                                                    >
+                                                        <FontAwesomeIcon icon={faTwitter} />
+                                                    </a>
+                                                ) : (
+                                                        ""
+                                                    )}
+                                            </div>
+                                        </div>
+                                        <p className="people-head">
+                                            <span>DOB : </span>
+                                            {data.birthday}
+                                        </p>
+                                        <p className="people-head">
+                                            <span>From : </span>
+                                            {data.place_of_birth}
+                                        </p>
+                                        <p className="people-head">
+                                            <span>Work : </span>
+                                            {data.known_for_department}
+                                        </p>
+                                        <p className="people-head">
+                                            <span>biography : </span>
+                                            {data.biography}
+                                        </p>
+                                    </div>
                                 </div>
+                                <nav style={{ marginTop: "30px" }} className="people-movie">
+                                    <div id="cast" className="link active-link">
+                                        Other Work
+                                    </div>
+                                    <div className="display-movie">{movie}</div>
+                                </nav>
                             </div>
-                            <nav style={{ marginTop: "30px" }} className="people-movie">
-                                <div id="cast" className="link active-link">
-                                    Other Work
-                                </div>
-                                <div className="display-movie">{movie}</div>
-                            </nav>
-                        </div>
-                    </>
-                )}
+                        </>
+                    )}
             </>
         );
     }
 }
+
